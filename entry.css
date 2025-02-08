@@ -1,0 +1,35 @@
+.imagebutton {
+    background-color: #fcf775; 
+    color: rgb(63, 42, 4);
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitbutton {
+    background-color: #fcf775; 
+    color: rgb(63, 42, 4);
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto;  /* Adjusted for better spacing */
+}
+
+
+.textbox {
+    width: 90%;
+    height: 300px;
+    margin: 50px auto;
+    display: block;
+}
