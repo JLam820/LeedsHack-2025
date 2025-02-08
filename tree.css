@@ -1,0 +1,88 @@
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button {
+    background-color: #666;
+    color: white;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+.add-event-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-event-button:hover {
+    background-color: #45a049;
+}
+
+.image-box {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 400px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-content: flex-start;
+}
+
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+#uploadButton {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 40px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+#uploadButton:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
