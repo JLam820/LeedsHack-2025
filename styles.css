@@ -14,3 +14,18 @@
     background-color: #b19470a9;
 }
 
+#plantSeedBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+#plantSeedBtn:hover {
+    background-color: #45a049;
+}
+
