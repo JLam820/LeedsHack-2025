@@ -1,5 +1,5 @@
 .imagebutton {
-    background-color: #fcf775; 
+    background-color: #6b7aff; 
     color: rgb(63, 42, 4);
     width: 150px;
     height: 40px;
@@ -12,7 +12,7 @@
 }
 
 .submitbutton {
-    background-color: #fcf775; 
+    background-color: #75fcb2; 
     color: rgb(63, 42, 4);
     width: 150px;
     height: 40px;
@@ -32,4 +32,14 @@
     height: 300px;
     margin: 50px auto;
     display: block;
+}
+
+.back-button button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.back-button button:hover {
+    background-color: #e0e0e0;
 }

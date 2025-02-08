@@ -9,8 +9,13 @@
     <script src='script.js'></script>
 </head>
 <body>
-    <!-- <div class="button-container"> -->
-    <button id="uploadButton" class="imagebutton">Insert Image</button>
+    <div style="display: flex; justify-content: space-between; padding: 20px;">
+        <a href="tree.html" class="back-button" style="text-decoration: none;">
+            <button style="padding: 10px 20px; cursor: pointer;">← Back</button>
+        </a>
+        <button id="uploadButton" class="imagebutton">Insert Image</button>
+    </div>
+
     <div id="imageContainer" 
     style="
         display: flex;
@@ -23,10 +28,5 @@
     "></div>
     <textarea class="textbox"></textarea>
     <button id="submitButton" class="submitbutton">Submit</button>
-
-    
-
-
-
 </body>
 </html>
