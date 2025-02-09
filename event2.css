@@ -1,3 +1,12 @@
+body {
+    background-image: url('img/soil.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    margin: 0;
+    padding: 0;
+}
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -29,7 +38,7 @@
 }
 
 .add-event-button {
-    background-color: #4CAF50;
+    background-color: #37923a;
     color: white;
 }
 
@@ -42,7 +51,7 @@
     border-radius: 8px;
     padding: 20px;
     min-height: 400px;
-    background-color: #f9f9f9;
+    background-color: #f8e09a;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
