@@ -5,11 +5,9 @@ import sqlite3
 
 app = Flask(__name__)
 
-# Directory where files will be uploaded
-UPLOAD_FOLDER = 'static/uploads'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def setup_db():
+
     # This function will be called once to initialize the database and create the table if not exists
     connection = sqlite3.connect('user_inputs.db')
     cursor = connection.cursor()
@@ -26,8 +24,10 @@ def setup_db():
     connection.close()
 
 # Endpoint to handle file uploads
-@app.route('/upload', methods=['POST'])
+@app.route("/upload", methods=["POST"])
+
 def upload_file():
+    print("im working")
     if 'media' not in request.files:
         return jsonify({"success": False, "message": "No file part"}), 400
 
@@ -49,6 +49,8 @@ def upload_file():
 
 # Function to save file paths in a JSON list
 def save_file_path(file_path):
+    print("HELLOOOOO")
+    ######is it this one?????? 
     # Try to read the current paths from the JSON file
     if os.path.exists('file_paths.json'):
         with open('file_paths.json', 'r') as f:
@@ -77,18 +79,18 @@ def index():
 # Route to handle text submission
 @app.route("/submit", methods=["POST"])
 def submit_text():
-    imagepath_input = []
-
+    print("HEUEJEJHJE")
     # tree_id_input = request.form.get("tree_id_input")
 
     tree_id_input = "test name"
     description_input = request.form.get("description_input")
 
-    # imagepath_input = request.form.get("imagepath_input")
+    imagepath_input = "img/Tree1.PNG"
 
-    with open('file_paths.json', 'r') as f:
-        # Deserialize the JSON string back into a Python list
-        imagepath_input = json.load(f)
+    # with open('file_paths.json', 'r') as f:
+    #     # Deserialize the JSON string back into a Python list
+    #     imagepath_input = json.load(f)
+    #     #########
 
     if tree_id_input and description_input and imagepath_input:
         # Insert text into the SQLite database
@@ -99,7 +101,10 @@ def submit_text():
         conn.commit()
         conn.close()
 
-    # return redirect(url_for("index"))  # Redirect to the home page after submission
+    return render_template("event2.html")  # Redirect to the home page after submission
+
+# UPLOAD_FOLDER = 'static/uploads'
+# os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Call setup_db() only once at the start of the app to set up the database
 setup_db()
