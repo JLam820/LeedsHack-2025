@@ -5,14 +5,15 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Entry page</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='entry.css'>
-    <script src='script.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='entrypage.css'>
+    <script src='entrypage.js'></script>
 </head>
 <body>
     <div style="display: flex; justify-content: space-between; padding: 20px;">
-        <a href="../tree.html" class="back-button" style="text-decoration: none;">
+        <a href="../event2.html" class="back-button" style="text-decoration: none;">
             <button style="padding: 10px 20px; cursor: pointer;">← Back</button>
         </a>
+        
         <button id="uploadButton" class="imagebutton">Insert Image</button>
     </div>
 
@@ -26,7 +27,8 @@
         min-height: 200px;
         margin-top: 20px;
     "></div>
-    <textarea class="textbox"></textarea>
+    <textarea class = "textbox" name="description_input" placeholder="Enter description" required></textarea><br><br>
+
     <button id="submitButton" class="submitbutton">Submit</button>
 </body>
 </html>

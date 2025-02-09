@@ -1,3 +1,5 @@
+let filePaths = []; //to store the images path 
+
 function openFileUploader() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -9,6 +11,7 @@ function openFileUploader() {
         
         for(let i = 0; i < files.length; i++) {
             const file = files[i];
+            
             if(file.type.startsWith('image/') || file.type.startsWith('video/')) {
                 handleFileUpload(file);
             } else {
