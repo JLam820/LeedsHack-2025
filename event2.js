@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedSeedName = localStorage.getItem('selectedSeedName');
     
     // You can now use selectedSeedName as needed
-    console.log('Selected seed name:', selectedSeedName);
     
     // Optional: Clear the storage after using it
     // localStorage.removeItem('selectedSeedName');
