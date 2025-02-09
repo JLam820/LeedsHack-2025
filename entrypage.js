@@ -34,7 +34,6 @@ function handleFileUpload(file) {
     const formData = new FormData();
     formData.append('media', file);
 
-    alert("filepath success");
 
     ///THE ISSUE IS HERE! 
 
@@ -50,11 +49,11 @@ function handleFileUpload(file) {
             filePaths.push(data.path);
 
             console.log('File uploaded and path saved:', data.path);
-            alert("filepath success 1");
+            
 
         } else {
             console.error('File upload failed:', data.message);
-            alert("filepath fail1");
+          
 
         }
     })
@@ -89,7 +88,7 @@ function displayMedia(file, container) {
 
 // Event listener to trigger file upload when the page loads
 document.addEventListener('DOMContentLoaded', function() {
-    alert("addEventListener")
+ 
     const uploadButton = document.getElementById('uploadButton');
     if (uploadButton) {
         console.log("Upload button found, attaching click event.");
@@ -103,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the seed name
     const selectedSeedName = localStorage.getItem('selectedSeedName');
-    alert(selectedSeedName);
+
     
     // You can now use selectedSeedName as needed
     console.log('Selected seed name:', selectedSeedName);
