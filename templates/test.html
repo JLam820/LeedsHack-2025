@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Text</title>
+</head>
+<body>
+    <h2>Enter Your Title and Description</h2>
+    <form action="/submit" method="post">
+        <input type="number" name="tree_id_input" placeholder="Enter id" required><br><br>
+
+        <textarea name="description_input" placeholder="Enter description" required></textarea><br><br>
+        
+        <input type="text" name="imagepath_input" placeholder="Enter path" required><br><br>
+        
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tree ID</th>
+                <th>Description</th>
+                <th>Image Path</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+                <tr>
+                    <td>{{ file[0] }}</td>  <!-- tree_id -->
+                    <td>{{ file[1] }}</td>  <!-- description -->
+                    <td>{{ file[2] }}</td>  <!-- imagepath -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- <h2>Submitted Texts</h2>
+    <ul>
+        {% for text in texts %}
+            <li><strong>{{ text[1] }}</strong>: {{ text[2] }}</li>
+        {% endfor %} -->
+    <!-- </ul> -->
+</body>
+</html>
