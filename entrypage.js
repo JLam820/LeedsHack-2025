@@ -1,6 +1,8 @@
 let filePaths = []; // To store the file paths
 
 function openFileUploader() {
+    alert("openFileUploader");
+
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
     fileInput.multiple = true;
@@ -33,6 +35,9 @@ function handleFileUpload(file) {
     const formData = new FormData();
     formData.append('media', file);
 
+    alert("filepath success");
+
+
     // Upload the file to Flask
     fetch('/upload', {
         method: 'POST',
@@ -43,13 +48,20 @@ function handleFileUpload(file) {
         if (data.success) {
             // Add the file path returned by Flask to the filePaths array
             filePaths.push(data.path);
+
             console.log('File uploaded and path saved:', data.path);
+            alert("filepath success 1");
+
         } else {
             console.error('File upload failed:', data.message);
+            alert("filepath fail1");
+
         }
     })
     .catch(error => {
         console.error('Error during file upload:', error);
+        alert("filepath fail2");
+
     });
 }
 
@@ -79,6 +91,7 @@ function displayMedia(file, container) {
 
 // Event listener to trigger file upload when the page loads
 document.addEventListener('DOMContentLoaded', function() {
+    alert("addEventListener")
     const uploadButton = document.getElementById('uploadButton');
     if (uploadButton) {
         console.log("Upload button found, attaching click event.");

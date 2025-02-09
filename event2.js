@@ -1,5 +1,5 @@
 function goBack() {
-    window.location.href = 'main.html';
+    window.location.href = '../main.html';
     console.log('Back button clicked');
 }
 
