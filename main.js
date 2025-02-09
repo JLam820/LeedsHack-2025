@@ -101,5 +101,4 @@ window.onload = function() {
     plantNewSeedHard("Secondary School", 3);
     plantNewSeedHard("University", 4);
     plantNewSeedHard("Hackathon", 2);
-    plantNewSeedHard("Trips", 1);
 };
