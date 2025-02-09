@@ -1,5 +1,11 @@
-* {
-    background-color: #F8FAE5;
+body {
+    background-image: url('img/grass.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    margin: 0;
+    padding: 0;
 }
 
 .dropbtn {
@@ -19,7 +25,7 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #37923a;
     color: white;
     border: none;
     border-radius: 5px;

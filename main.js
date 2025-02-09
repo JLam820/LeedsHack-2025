@@ -34,6 +34,7 @@ function plantNewSeed() {
         // Add click event listener to the name label
         nameLabel.style.cursor = 'pointer'; // Changes cursor to pointer on hover
         nameLabel.addEventListener('click', () => {
+            localStorage.setItem('selectedSeedName', seedName);
             window.location.href = 'templates/event2.html';
         });
 
