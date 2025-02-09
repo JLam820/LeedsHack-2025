@@ -1,8 +1,8 @@
-*{
+* {
     background-color: #F8FAE5;
 }
 
-.dropbtn{
+.dropbtn {
     background-color: #B19470;
     border: none;
     padding: 5px;
@@ -10,7 +10,8 @@
     margin-left: 15px;
     margin-top: 15px;
 }
-.dropbtn:hover{
+
+.dropbtn:hover {
     background-color: #b19470a9;
 }
 
@@ -29,3 +30,72 @@
     background-color: #45a049;
 }
 
+#treeContainer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#treeContainer img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#treeContainer .seedName {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.seed {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.seed img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.seedName {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+.seedName:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.backButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.backButton:hover {
+    background-color: #45a049;
+}
+
+#treeView {
+    margin-top: 60px;
+    /* Add your tree visualization styling here */
+}
