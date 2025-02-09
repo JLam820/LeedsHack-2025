@@ -1,7 +1,13 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, jsonify
+import os
+import json
 import sqlite3
 
 app = Flask(__name__)
+
+# Directory where files will be uploaded
+UPLOAD_FOLDER = 'static/uploads'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def setup_db():
     # This function will be called once to initialize the database and create the table if not exists
@@ -19,6 +25,44 @@ def setup_db():
     connection.commit()
     connection.close()
 
+# Endpoint to handle file uploads
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'media' not in request.files:
+        return jsonify({"success": False, "message": "No file part"}), 400
+
+    file = request.files['media']
+
+    if file.filename == '':
+        return jsonify({"success": False, "message": "No selected file"}), 400
+
+    # Ensure the file has a valid filename (sanitize it)
+    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+    
+    # Save the file to the server
+    file.save(file_path)
+
+    # Add file path to the file_paths.json file
+    save_file_path(file_path)
+
+    return jsonify({"success": True, "path": file_path})
+
+# Function to save file paths in a JSON list
+def save_file_path(file_path):
+    # Try to read the current paths from the JSON file
+    if os.path.exists('file_paths.json'):
+        with open('file_paths.json', 'r') as f:
+            file_paths = json.load(f)
+    else:
+        file_paths = []
+
+    # Append the new file path
+    file_paths.append(file_path)
+
+    # Save the updated list of paths back to the JSON file ???????
+    with open('file_paths.json', 'w') as f:
+        json.dump(file_paths, f)
+
 @app.route("/")
 def index():
     # Fetch uploaded files from the database
@@ -28,14 +72,23 @@ def index():
     files = cursor.fetchall()
     conn.close()
 
-    return render_template("test.html", files=files)
+    return render_template("event2.html", files=files)
 
 # Route to handle text submission
 @app.route("/submit", methods=["POST"])
 def submit_text():
-    tree_id_input = request.form.get("tree_id_input")
+    imagepath_input = []
+
+    # tree_id_input = request.form.get("tree_id_input")
+
+    tree_id_input = "test name"
     description_input = request.form.get("description_input")
-    imagepath_input = request.form.get("imagepath_input")
+
+    # imagepath_input = request.form.get("imagepath_input")
+
+    with open('file_paths.json', 'r') as f:
+        # Deserialize the JSON string back into a Python list
+        imagepath_input = json.load(f)
 
     if tree_id_input and description_input and imagepath_input:
         # Insert text into the SQLite database
@@ -46,7 +99,7 @@ def submit_text():
         conn.commit()
         conn.close()
 
-    return redirect(url_for("index"))  # Redirect to the home page after submission
+    # return redirect(url_for("index"))  # Redirect to the home page after submission
 
 # Call setup_db() only once at the start of the app to set up the database
 setup_db()
