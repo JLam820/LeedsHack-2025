@@ -4,6 +4,6 @@ function goBack() {
 }
 
 function addEvent() {
-    window.location.href = 'templates/entrypage.html';
+    window.location.href = 'entrypage.html';
     console.log('Add Event button clicked');
 }

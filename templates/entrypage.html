@@ -13,22 +13,27 @@
         <a href="../event2.html" class="back-button" style="text-decoration: none;">
             <button style="padding: 10px 20px; cursor: pointer;">← Back</button>
         </a>
-        
-        <button id="uploadButton" class="imagebutton">Insert Image</button>
     </div>
 
-    <div id="imageContainer" 
-    style="
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 20px;
-        border: 2px dashed #ccc;
-        min-height: 200px;
-        margin-top: 20px;
-    "></div>
-    <textarea class = "textbox" name="description_input" placeholder="Enter description" required></textarea><br><br>
+    <form action="/submit" method="post" target="_self"> 
+        <div style="display: flex; justify-content: space-between; padding: 20px;">
+            <button id="uploadButton" class="imagebutton" type="button">Insert Image</button>
+        </div>
 
-    <button id="submitButton" class="submitbutton">Submit</button>
+        <div id="imageContainer" 
+        style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            min-height: 200px;
+            margin-top: 20px;
+        "></div>
+
+        <textarea class = "textbox" name="description_input" placeholder="Enter description" required></textarea><br><br>
+
+        <button id="submitButton" class="submitbutton">Submit</button>
+    </form>
 </body>
 </html>
